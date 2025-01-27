@@ -107,8 +107,8 @@
 -- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 -- Turns column mode on but headers off
-.mode column
-.headers off
+-- .mode column
+-- .headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -140,6 +140,10 @@
 
 
 -- BEN's CODE BELOW --
+
+--Response format
+.mode column
+.headers off
 
 -- Drop tables if they exist
 DROP TABLE IF EXISTS characters;
@@ -231,12 +235,19 @@ VALUES
   ('Selina Kyle', 3, 11);
   
 -- As a guest, I want to see a list of movies with the title, year released, MPAA rating, and studio information.
+.print "Movies"
+.print "======"
+.print ""
 SELECT movies.title, movies.year_released, movies.mpaa_rating, studios.name
 FROM 
   movies
 INNER JOIN studios ON movies.studio_id = studios.id;
 
 --As a guest, I want to see each movie's cast including each actor's name and the name of the character they portray.
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
 SELECT movies.title, actors.name, characters.character_name
 FROM 
   characters
