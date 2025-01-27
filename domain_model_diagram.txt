@@ -1,0 +1,5 @@
+Link to Domain Model Diagram:
+
+https://miro.com/welcomeonboard/YVlHQ2d3aldHejhKWlpiSjR5SmpPNFZUdDRmRzdBR0ZnTHY4ZlpCYVpIQlFUaXNOd3o5Z3ZDYVFiWmUzWnI3cys4UE9oaDJTay9sRTdWSzRrbkdPbi9IWG9RYm8wUTcvOHRsVDB0L243d25BbzQwb053L29wMFZNeU5ad01DZ3QhZQ==?share_link_id=230054839300
+
+To view fields for each entity, click on the 'Fields' box beneath any entity and click the 'Expand' button
