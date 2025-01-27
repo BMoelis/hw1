@@ -172,7 +172,7 @@ CREATE TABLE actors (
 
 CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    character_name TEXT,
+    name TEXT,
     movie_id INTEGER,
     actor_id INTEGER
 );
@@ -213,7 +213,7 @@ VALUES
   ('Anne Hathaway');
 
 INSERT INTO characters (
-  character_name,
+  name,
   movie_id,
   actor_id
 )
@@ -248,7 +248,7 @@ INNER JOIN studios ON movies.studio_id = studios.id;
 .print "Top Cast"
 .print "========"
 .print ""
-SELECT movies.title, actors.name, characters.character_name
+SELECT movies.title, actors.name, characters.name
 FROM 
   characters
 INNER JOIN movies ON characters.movie_id = movies.id
