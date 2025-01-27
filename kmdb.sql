@@ -107,8 +107,8 @@
 -- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 -- Turns column mode on but headers off
--- .mode column
--- .headers off
+.mode column
+.headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -229,3 +229,16 @@ VALUES
   ('Bane', 3, 9),
   ('John Blake', 3, 10),
   ('Selina Kyle', 3, 11);
+  
+-- As a guest, I want to see a list of movies with the title, year released, MPAA rating, and studio information.
+SELECT movies.title, movies.year_released, movies.mpaa_rating, studios.name
+FROM 
+  movies
+INNER JOIN studios ON movies.studio_id = studios.id;
+
+--As a guest, I want to see each movie's cast including each actor's name and the name of the character they portray.
+SELECT movies.title, actors.name, characters.character_name
+FROM 
+  characters
+INNER JOIN movies ON characters.movie_id = movies.id
+INNER JOIN actors ON characters.actor_id = actors.id;
