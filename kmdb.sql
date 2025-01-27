@@ -107,51 +107,16 @@
 -- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 -- Turns column mode on but headers off
--- .mode column
--- .headers off
-
--- Drop existing tables, so you'll start fresh each time this script is run.
--- TODO!
-
--- Create new tables, according to your domain model
--- TODO!
-
--- Insert data into your database that reflects the sample data shown above
--- Use hard-coded foreign key IDs when necessary
--- TODO!
-
--- Prints a header for the movies output
--- .print "Movies"
--- .print "======"
--- .print ""
-
--- The SQL statement for the movies output
--- TODO!
-
--- Prints a header for the cast output
--- .print ""
--- .print "Top Cast"
--- .print "========"
--- .print ""
-
-
--- The SQL statement for the cast output
--- TODO!
-
-
--- BEN's CODE BELOW --
-
---Response format
 .mode column
 .headers off
 
--- Drop tables if they exist
+-- Drop existing tables, so you'll start fresh each time this script is run.
 DROP TABLE IF EXISTS characters;
 DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS studios;
 
--- Create new tables from scratch
+-- Create new tables, according to your domain model
 CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT
@@ -177,8 +142,8 @@ CREATE TABLE characters (
     actor_id INTEGER
 );
 
-
--- Insert data
+-- Insert data into your database that reflects the sample data shown above
+-- Use hard-coded foreign key IDs when necessary
 INSERT INTO studios (
   name
 )
@@ -233,21 +198,25 @@ VALUES
   ('Bane', 3, 9),
   ('John Blake', 3, 10),
   ('Selina Kyle', 3, 11);
-  
--- As a guest, I want to see a list of movies with the title, year released, MPAA rating, and studio information.
+
+-- Prints a header for the movies output
 .print "Movies"
 .print "======"
 .print ""
+
+-- The SQL statement for the movies output
 SELECT movies.title, movies.year_released, movies.mpaa_rating, studios.name
 FROM 
   movies
 INNER JOIN studios ON movies.studio_id = studios.id;
 
---As a guest, I want to see each movie's cast including each actor's name and the name of the character they portray.
+-- Prints a header for the cast output
 .print ""
 .print "Top Cast"
 .print "========"
 .print ""
+
+-- The SQL statement for the cast output
 SELECT movies.title, actors.name, characters.name
 FROM 
   characters
